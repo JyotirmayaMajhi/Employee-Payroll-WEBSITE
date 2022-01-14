@@ -219,3 +219,10 @@ select{
     .slide-range {
         padding: 0px;
     }
+
+    error-output {
+        margin-left: 10px;
+        font-size: 12px;
+        font-style: italic;
+        color: red;
+    }

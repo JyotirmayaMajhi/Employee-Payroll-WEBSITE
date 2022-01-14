@@ -19,11 +19,12 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false">
+        <form class="form" action="#" onsubmit="save(event);return false"onreset="salaryReset();">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name:</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="text-error" for="name"></error-output>
             </div>
 
             <div class="row-content">
@@ -76,7 +77,6 @@
                 <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
                 <output class="salary-output text" for="salary">400000</output>
             </div>
-            <script src="\JS\Salary.js"></script>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
@@ -138,6 +138,7 @@
                         <option value="2016">2016</option>
                     </select>
                 </div>
+                <error-output class="text-error" id="startDate"></error-output>
             </div> 
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
@@ -150,8 +151,11 @@
                     <button type="reset" class="resetButton button button">Reset</button>
                 </div>
             </div>
-
+            <script src="\JS\Salary.js"></script>
+            <script type="text/javascript" src="\JS\EmployeePayrollData.js"></script>
+            <script src="\JS\EmplyeePayroll.js"></script>
         </form>
      </div>
+     
 </body>
 </html>
