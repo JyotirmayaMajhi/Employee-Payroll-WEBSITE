@@ -28,7 +28,7 @@ class EmployeePayrollData {
     set note(note) { this._note = note; }
 
     get startDate() { return this._startDate; }
-    set startDate(startDate) { 
+    set startDate(startDate) {
         let curDate = new Date();
         if (startDate > curDate)
             throw "Start date is future date";
@@ -37,15 +37,14 @@ class EmployeePayrollData {
         if (diff / (1000 * 60 * 60 * 24) > 30)
             throw "Start date is beyond 30 days";
         this._startDate = startDate;
-     }
+    }
 
     toString() {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = !this.startDate ? "undefined" :
-            this.startDate.toLocaleDateString("en-US", options);
-        
-            return "id=" + this.id + ", name=" + this.name + ", gender=" + this.gender +
+        // const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        // const empDate = !this.startDate ? "undefined" :
+        //     this.startDate.toLocaleDateString("en-US", options);
+        return "id=" + this.id + ", name=" + this.name + ", gender=" + this.gender +
             ", profilePic=" + this.profilePic + ", department=" + this.department +
-            ", salary=" + this.salary + ", startDate=" + empDate + ", note =" + this.note;
+            ", salary=" + this.salary + ", startDate=" + (new Date(this.startDate).toDateString()) + ", note =" + this.note;
     }
 }
