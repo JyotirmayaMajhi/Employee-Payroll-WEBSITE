@@ -103,8 +103,6 @@ const getInputElementValue = (id) => {
     return value;
 }
 
-// UC4 svaing in local
-
 function createAndUpdateStorage(employeePayrollData) {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if (employeePayrollList != undefined) {
@@ -116,39 +114,39 @@ function createAndUpdateStorage(employeePayrollData) {
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList))
 }
 
-//UC5
+// //UC5
 
-const resetForm = () => {
-    console.log("resetting...");
-    setValue('#name', '');
-    const nameError = document.querySelector(".text-error");
-    nameError.textContent = '';
-    unsetSelectedValues('[name=profile]');
-    unsetSelectedValues('[name=gender]');
-    unsetSelectedValues('[name=department]');
-    setValue('#salary', '400000');
-    const output = document.querySelector('.salary-output');
-    output.textContent = '400000';
-    setValue('#note', '');
-    setValue('#day', 'day');
-    setValue('#month', 'month');
-    setValue('#year', 'year');
-    let dateError = document.querySelector('.date-error');
-    dateError.textContent = '';
-    // setTextValue('.date-error','');
-}
-const unsetSelectedValues = (propertyValue) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    allItems.forEach(item => {
-        item.checked = false;
-    });
-}
+// const resetForm = () => {
+//     console.log("resetting...");
+//     setValue('#name', '');
+//     const nameError = document.querySelector(".text-error");
+//     nameError.textContent = '';
+//     unsetSelectedValues('[name=profile]');
+//     unsetSelectedValues('[name=gender]');
+//     unsetSelectedValues('[name=department]');
+//     setValue('#salary', '400000');
+//     const output = document.querySelector('.salary-output');
+//     output.textContent = '400000';
+//     setValue('#note', '');
+//     setValue('#day', 'day');
+//     setValue('#month', 'month');
+//     setValue('#year', 'year');
+//     let dateError = document.querySelector('.date-error');
+//     dateError.textContent = '';
+//     // setTextValue('.date-error','');
+// }
+// const unsetSelectedValues = (propertyValue) => {
+//     let allItems = document.querySelectorAll(propertyValue);
+//     allItems.forEach(item => {
+//         item.checked = false;
+//     });
+// }
 
-const setTextValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.textContent = value;
-}
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.value = value;
-}
+// const setTextValue = (id, value) => {
+//     const element = document.querySelector(id);
+//     element.textContent = value;
+// }
+// const setValue = (id, value) => {
+//     const element = document.querySelector(id);
+//     element.value = value;
+// }
